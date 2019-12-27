@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lc</groupId>
     <artifactId>study-zookeeper</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
-    <dependencies>
-        <!-- zk -->
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.13</version>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>study-zookeeper-common</module>
+        <module>study-zookeeper-contract</module>
+        <module>study-zookeeper-provider</module>
+        <module>study-zookeeper-consumer</module>
+    </modules>
+
 </project>
