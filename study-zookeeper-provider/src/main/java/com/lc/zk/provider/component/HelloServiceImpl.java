@@ -10,6 +10,7 @@ public class HelloServiceImpl extends UnicastRemoteObject implements HelloServic
 
     @Override
     public String sayHello(String name) throws RemoteException {
+        System.out.println("hello " + name);
         return "Hello " + name;
     }
 }

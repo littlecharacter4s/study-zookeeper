@@ -19,7 +19,10 @@ public final class ZkHelper {
         try {
             zooKeeper = new ZooKeeper(PropertyUtil.getInstance().getProperty(Constants.RMI_ZOOKEEPER), 5000, event -> {
                 if (event.getState() == Watcher.Event.KeeperState.SyncConnected) {
+                    System.out.println("zk连接成功!");
                     latch.countDown();
+                } else {
+                    System.err.println("zk连接失败!");
                 }
             });
             latch.await();

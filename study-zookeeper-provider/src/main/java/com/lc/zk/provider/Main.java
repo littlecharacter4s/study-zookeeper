@@ -15,13 +15,13 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) throws UnknownHostException, RemoteException, InterruptedException {
         String ip = InetAddress.getLocalHost().getHostAddress();
-        int port = 3073;
+        int port = 3076;
         Map<Class<?>, Remote> providers = new HashMap<>();
         HelloService helloService = new HelloServiceImpl();
         providers.put(HelloService.class, helloService);
-//        UserService userService = new UserServiceImpl();
-//        providers.put(UserService.class, userService);
+        // UserService userService = new UserServiceImpl();
+        // providers.put(UserService.class, userService);
         ProviderHelper.registry(ip, port, providers);
-        TimeUnit.SECONDS.sleep(3600);
+        while (true) {}
     }
 }
